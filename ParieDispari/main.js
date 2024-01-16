@@ -7,6 +7,10 @@
 
 let buttonPari= document.getElementById("btnP")
 let buttonDispari= document.getElementById("btnD")
+let numero1= document.getElementById("nm1")
+let numero2= document.getElementById("nm2")
+let sum= document.getElementById("sm")
+let risultato= document.getElementById("rst")
 let somma= 0
 
 
@@ -18,9 +22,9 @@ buttonDispari.addEventListener("click", function(){
     Dispari()
     
     
-    console.log(`il tuo numero é ${numeroGiocatore}`)
-    console.log(`il numero avversario é ${numeroRandom}`)
-    console.log(`la somma è ${somma}`)
+    numero1.innerHTML= `${numeroGiocatore}`
+    numero2.innerHTML= `${numeroRandom}`
+    sum.innerHTML= `${somma}`
 
 })
 
@@ -31,9 +35,9 @@ buttonPari.addEventListener("click", function(){
     Pari()
     
     
-    console.log(`il tuo numero é ${numeroGiocatore}`)
-    console.log(`il numero avversario é ${numeroRandom}`)
-    console.log(`la somma è ${somma}`)
+    numero1.innerHTML= `${numeroGiocatore}`
+    numero2.innerHTML= `${numeroRandom}`
+    sum.innerHTML= `${somma}`
     
 })
 
@@ -45,15 +49,19 @@ function Random(min, max) {
 
 function Dispari(){
     if(somma % 2 == 0){
+        risultato.innerHTML= "Hai perso"
         console.log("hai perso")
     }else 
+    risultato.innerHTML= "Hai vinto"
     console.log("hai vinto")
 }
 
 function Pari(){
     if(somma % 2 == 0){
+        risultato.innerHTML= "Hai vinto"
         console.log("hai vinto")
     }else 
+    risultato.innerHTML= "Hai perso"
     console.log("hai perso")
 }
 
